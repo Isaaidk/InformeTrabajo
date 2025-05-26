@@ -1,0 +1,37 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Soporte Técnico</title>
+</head>
+<body>
+    <h1>Listado de Informes</h1>
+    <form method="POST" action="/agregar">
+        <input type="text" name="ticket" placeholder="Ticket" required><br>
+        <input type="date" name="fecha" required><br>
+        <input type="text" name="cliente" placeholder="Cliente" required><br>
+        <input type="text" name="usuario" placeholder="Usuario Informe" required><br>
+        <input type="number" name="departamento" placeholder="ID Departamento" required><br>
+        <input type="number" name="extencion" placeholder="Extensión"><br>
+        <input type="number" name="tipo_equipo" placeholder="ID Equipo" required><br>
+        <input type="number" name="marca" placeholder="ID Marca" required><br>
+        <input type="text" name="modelo" placeholder="Modelo" required><br>
+        <input type="number" name="codigo_udla" placeholder="Código UDLA" required><br>
+        <input type="text" name="serie" placeholder="Serie" required><br>
+        <input type="number" name="garantia" placeholder="ID Garantía" required><br>
+        <textarea name="problema" placeholder="Problema" required></textarea><br>
+        <textarea name="diagnostico" placeholder="Diagnóstico" required></textarea><br>
+        <textarea name="recomendacion" placeholder="Recomendación" required></textarea><br>
+        <input type="number" name="estado" placeholder="ID Estado" required><br>
+        <input type="text" name="persona" placeholder="Persona Revisión" required><br>
+        <button type="submit">Agregar Informe</button>
+    </form>
+
+    <h2>Registros:</h2>
+    <ul>
+        {% for inf in informes %}
+            <li>{{ inf.FECHA }} - {{ inf.NOMBRE_CLIENTE }} - {{ inf.MODELO }} - {{ inf.DESCRIPCION_PROBLEMA }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
