@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Panel de Usuario{% endblock %}
+
+{% block content %}
+<h2>Bienvenido, {{ correo }}</h2>
+
+<form method="POST" action="/insert_informe"> <!-- Aquí podrías agregar el insert -->
+    <label>Correo del informe:</label><br>
+    <input type="email" name="usuario_informe" value="{{ correo }}" readonly><br><br>
+
+    <!-- Aquí puedes agregar los demás campos del informe -->
+
+    <a href="{{ url_for('agregar') }}">Crear Informe</a>
+
+    <button type="submit">Enviar Informe</button>
+</form>
+
+<br>
+
+<a href="{{ url_for('logout') }}">Cerrar Sesión</a>
+{% endblock %}
+

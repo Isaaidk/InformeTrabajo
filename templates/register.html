@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Usuario</title>
+</head>
+<body>
+    <h1>Registro de Usuario</h1>
+    <form method="POST">
+        <label>Correo:</label><br>
+        <input type="email" name="correo" required><br><br>
+
+        <label>Contraseña:</label><br>
+        <input type="password" name="contraseña" required><br><br>
+
+        <label>Tipo de Usuario:</label><br>
+        <select name="tipo_usuario">
+            <option value="2" selected>Regular</option>
+            <option value="1">Administrador</option>
+        </select><br><br>
+
+        <button type="submit">Registrar</button>
+    </form>
+    <p><a href="{{ url_for('login') }}">Volver al login</a></p>
+</body>
+</html>
